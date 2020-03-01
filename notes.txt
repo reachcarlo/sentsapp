@@ -1,0 +1,176 @@
+user {
+    name: {
+        type: String
+    },
+    email: {
+        type: String
+    },
+    password {
+        type: String
+    },
+    avatar: {
+        type: String
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
+}
+
+restaurant: {
+    name: {
+        type: String
+    },
+    address: {
+        type: String
+    },
+    city: {
+        type: String
+    },
+    state: {
+        type: String
+    },
+    zip: {
+        type: Number
+    }
+    hours: {
+        sunday: {
+            open: {
+                type: Date
+            },
+            close: {
+                type: Date
+            }
+            clsoed: {
+                type: Boolean
+            }
+        },
+        monday: {
+            open: {
+                type: Date
+            },
+            close: {
+                type: Date
+            }
+            clsoed: {
+                type: Boolean
+            }
+        },
+        tuesday: {
+            open: {
+                type: Date
+            },
+            close: {
+                type: Date
+            }
+            clsoed: {
+                type: Boolean
+            }
+        },
+        wednesday: {
+            open: {
+                type: Date
+            },
+            close: {
+                type: Date
+            }
+            clsoed: {
+                type: Boolean
+            }
+        },
+        thursday: {
+            open: {
+                type: Date
+            },
+            close: {
+                type: Date
+            }
+            clsoed: {
+                type: Boolean
+            }
+        },
+        friday: {
+            open: {
+                type: Date
+            },
+            close: {
+                type: Date
+            }
+            closed: {
+                type: Boolean
+            }
+        },
+        saturday: {
+            open: {
+                type: Date
+            },
+            close: {
+                type: Date
+            }
+            clsoed: {
+                type: Boolean
+            }
+        }
+    },
+    tax: {
+        type: Number
+    },
+    items: [
+        name: {
+            type: String
+        },
+        description: {
+            type: String
+        },
+        amount: {
+            type: Number
+        },
+        ingredients: [
+            name: {
+                type: String
+            }
+        ]
+    ]
+}
+
+cost: {
+    name: {
+        type: String
+    }
+    description: {
+        type: String
+    },
+    total: {
+        type: Number
+    },
+    participants: [
+        {
+            user: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'users'
+            }
+        }
+    ]
+    costs: [
+        amount: {
+            type: Number
+        },
+        note: {
+            type: String
+        },
+        participants: [
+            {
+                user: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'users'
+                }
+            }
+        ]
+    ],
+    date: {
+        type: Date,
+        default: Date.now
+    }
+}
+
+origin-sents
